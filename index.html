@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moving Backgrounds</title>
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+  
+  <body>
+    <h1>
+      Moving Backgrounds
+    </h1>
+    <section>
+      <div class="container">
+        <h2>
+          Wave Gradient (canvas)
+        </h2>
+      </div>
+      <div class="hero">
+        <canvas id="cvs-waves"></canvas>
+      </div>
+      <div class="container">
+        <p>
+          
+        </p>
+      </div>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/waveGradient.js"></script>
+    <script defer="defer">
+      let cvsWaveGrad;
+      $(document).ready(function() {
+        cvsWaveGrad = new CanvasWaveGradient(document.getElementById("cvs-waves"));
+        window.setInterval(function() {
+          cvsWaveGrad.draw();
+        }, 30);
+        //cvsWaveGrad.draw();
+      });
+    </script>
+  </body>
+</html>
